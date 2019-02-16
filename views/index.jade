@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container  
+    h1.title Progress App
+    br
+    br
+    form(method="POST", action="/progress-admin").form
+      .form-group  
+        input(type="text", name="username", placeholder="Admin username").form-control
+        input(type="text", name="progress_name", placeholder="Enter progress name").form-control
+
+      button(type="submit").btn.btn-primary Login

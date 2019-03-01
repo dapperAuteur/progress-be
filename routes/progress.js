@@ -1,14 +1,17 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { Admin, validate } = require("../models/admin");
 
-router.post("/", async (req, res) => {
-  const admin = await Admin.find({ username: req.body.username });
-
-  if (admin.length < 1) {
-    return res.status(400).json({ error: "Invalid Admin" });
-  }
-  res.render("progress-admin", { admin: admin[0].username });
+router.post('/', async (req, res) => {
+  // const io = req.app.get('socketio');
+  // let users;
+  // io.sockets.on('connection', socket => {
+  //   console.log('New connection: ', socket.id);
+  //   socket.on('Users', data => {
+  //     users = data;
+  //     console.log(data);
+  //   });
+  // });
+  // res.send(users);
 });
 
 module.exports = router;
